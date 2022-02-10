@@ -16,7 +16,14 @@ cp config/coc/coc-settings.json ~/.config/coc/coc-settings.json
 echo "Done"
 
 echo "Run next commands"
-echo ":CocInstall coc-ccls"
+echo "run nvim"
+echo ":PlugInstall"
+nvim --headless +PlugInstall +qall
+# echo ":CocInstall coc-ccls"
+# nvim --headless +'CocInstall -sync coc-ccls' +qall
 echo ":CocInstall coc-go"
+nvim --headless +'CocInstall -sync coc-go' +qall
 echo ":CocInstall coc-python"
-nvim +PlugInstall
+nvim --headless +'CocInstall -sync coc-python' +qall
+echo ":CocUpdateSync"
+nvim --headless +'CocUpdateSync' +qall
