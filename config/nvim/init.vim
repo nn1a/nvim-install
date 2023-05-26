@@ -17,6 +17,8 @@ Plug 'majutsushi/tagbar'
 
 call plug#end()
 
+let g:CommandTPreferredImplementation='lua'
+
 "============CoC setting======================
 "" use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -79,7 +81,7 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
           " Enable true colors, see  :help xterm-true-color
           let &termguicolors = v:true
           let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-          let %t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+          let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
           " Enable bracketed paste mode, see  :help xterm-bracketed-paste
           let &t_BE = "\<Esc>[?2004h"
@@ -97,5 +99,3 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
           execute "silent! set <xRight>=<Esc>[@;*C"
           execute "silent! set <xLeft>=\<Esc>[@;*D"
 endif
-
-          
